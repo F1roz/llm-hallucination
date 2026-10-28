@@ -1,0 +1,51 @@
+# Mode C: the full experiment reported in the paper.
+# Sized from the pilot (27 October 2026; change log in docs/EXPERIMENTAL_PROTOCOL.md).
+# The 200 pilot questions are excluded, so no reported number uses a pilot item.
+# TruthfulQA keeps every remaining question because it yields most consistently wrong answers.
+run_name: full
+mode: full
+seed: 20261022
+results_root: results
+backend: auto            # vLLM if it loads, otherwise transformers
+datasets:
+  truthfulqa: null       # all 717 questions not used by the pilot
+  triviaqa: 200
+  sciq: 200
+exclude_sample:          # the pilot's sample (same seed), removed before sampling
+  truthfulqa: 100
+  triviaqa: 50
+  sciq: 50
+max_cw: 120              # at most 120 consistently wrong items per model in the matched set
+models:
+  - key: qwen7b
+    display_name: Qwen2.5-7B-Instruct
+    hf_id: Qwen/Qwen2.5-7B-Instruct
+    revision: a09a35458c702b33eeacc393d103063234e8bc28
+    low_memory_hf_id: Qwen/Qwen2.5-7B-Instruct-AWQ
+    low_memory_revision: b25037543e9394b818fdfca67ab2a00ecc7dd641
+    low_memory_quantization: awq
+  - key: llama8b
+    display_name: Llama-3.1-8B-Instruct
+    hf_id: unsloth/Llama-3.1-8B-Instruct        # ungated copy of meta-llama/Llama-3.1-8B-Instruct
+    revision: 4699cc75b550f9c6f3173fb80f4703b62d946aa5
+    low_memory_hf_id: hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4
+    low_memory_revision: db1f81ad4b8c7e39777509fac66c652eb0a52f91
+    low_memory_quantization: awq
+nli_backend: deberta
+nli_model: microsoft/deberta-large-mnli
+nli_revision: 7296194b9009373def4f7c5dad292651e4b5cf4e
+n_samples: 10
+sample_temperature: 0.5
+max_new_tokens: 32
+consistency_threshold: 0.9
+n_pressure: 3
+matched_ratio: 1.0
+run_metaqa: true
+metaqa_mutations: 5
+run_random_alternative: false
+batch_size: 16
+bootstrap_samples: 2000
+cv_folds: 5
+judge:
+  backend: auto          # GPT-4o-mini when OPENAI_API_KEY is set, otherwise alias + NLI
+  openai_model: gpt-4o-mini

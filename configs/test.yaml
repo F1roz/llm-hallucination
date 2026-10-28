@@ -1,0 +1,31 @@
+# Offline test configuration: simulated model and exact-match NLI. Used by pytest only.
+run_name: test
+mode: test
+seed: 7
+results_root: results
+backend: mock
+nli_backend: mock
+fixture_path: tests/fixtures/questions.jsonl
+datasets:
+  truthfulqa: null
+  triviaqa: null
+  sciq: null
+models:
+  - key: model_a
+    display_name: Simulated-A
+    hf_id: none
+  - key: model_b
+    display_name: Simulated-B
+    hf_id: none
+n_samples: 10
+sample_temperature: 0.5
+consistency_threshold: 0.9
+n_pressure: 3
+matched_ratio: 1.0
+run_metaqa: true
+metaqa_mutations: 5
+run_random_alternative: true
+bootstrap_samples: 200
+cv_folds: 3
+judge:
+  backend: match_nli

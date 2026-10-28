@@ -1,0 +1,91 @@
+# Words and phrases to avoid in manuscript prose.
+# Compiled from two public style guides (see docs/WRITING_CHECKLIST.md).
+# Matching is case insensitive and on whole words or whole phrases.
+
+words:
+  delve: explore, examine
+  tapestry: mix, collection
+  multifaceted: complex, varied
+  nuanced: subtle, detailed
+  landscape: field, area
+  comprehensive: full, complete
+  pivotal: key, important
+  crucial: important, necessary
+  leverage: use
+  leverages: uses
+  leveraging: using
+  robust: reliable, stable (keep only as a defined technical term)
+  robustness: stability (keep only as a defined technical term)
+  streamline: simplify
+  utilize: use
+  utilizes: uses
+  utilizing: using
+  facilitate: help, enable
+  endeavor: effort
+  paramount: most important
+  underscore: show, highlight
+  underscores: shows
+  realm: area
+  harness: use
+  illuminate: explain
+  bolster: support
+  refine: improve (allowed for a defined procedure)
+  revolutionize: change
+  innovative: new, or cut
+  transformative: cut, or state the measured change
+  seamless: smooth, or cut
+  furthermore: also
+  moreover: also
+  additionally: also
+  consequently: so, as a result
+  nevertheless: still, but
+  notably: cut, or state the fact
+  arguably: cut, or make the argument
+  showcase: show
+  intricate: complex
+  meticulous: careful
+  groundbreaking: cut
+  cutting-edge: cut
+  game-changing: cut
+  foster: encourage
+  empower: help
+
+phrases:
+  - delve into
+  - it is worth noting
+  - it's worth noting
+  - it is important to note
+  - it's important to note
+  - it is important to understand
+  - in today's digital age
+  - in the realm of
+  - this is particularly true
+  - one might argue
+  - it goes without saying
+  - at the end of the day
+  - in an era where
+  - when it comes to
+  - on the other hand
+  - in conclusion
+  - to summarize
+  - that being said
+  - with that in mind
+  - in light of this
+  - at its core
+  - to put it simply
+  - a key takeaway
+  - from a broader perspective
+  - generally speaking
+  - broadly speaking
+  - to some extent
+  - shed light on
+  - harness the power
+  - navigate the complexities
+  - unlock the potential
+  - a testament to
+  - plays a crucial role
+  - plays a pivotal role
+  - paving the way
+  - scalable solution
+  - seamless integration
+  - foster innovation

@@ -1,0 +1,38 @@
+# Mode A: smoke test on a real GPU. Tiny models, 24 questions; checks that every stage runs.
+# Its numbers mean nothing and must never go into the paper.
+run_name: smoke
+mode: smoke
+seed: 20261022
+results_root: results
+backend: auto            # vLLM if it loads, otherwise transformers
+datasets:
+  truthfulqa: 8
+  triviaqa: 8
+  sciq: 8
+models:
+  - key: qwen05b
+    display_name: Qwen2.5-0.5B-Instruct
+    hf_id: Qwen/Qwen2.5-0.5B-Instruct
+    revision: 7ae557604adf67be50417f59c2c2f167def9a775
+  - key: qwen15b
+    display_name: Qwen2.5-1.5B-Instruct
+    hf_id: Qwen/Qwen2.5-1.5B-Instruct
+    revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+nli_backend: deberta
+nli_model: microsoft/deberta-large-mnli
+nli_revision: 7296194b9009373def4f7c5dad292651e4b5cf4e
+n_samples: 4
+sample_temperature: 0.5
+max_new_tokens: 32
+consistency_threshold: 0.75
+n_pressure: 3
+matched_ratio: 1.0
+run_metaqa: true
+metaqa_mutations: 2
+run_random_alternative: true
+batch_size: 16
+bootstrap_samples: 200
+cv_folds: 2
+judge:
+  backend: auto          # GPT-4o-mini when OPENAI_API_KEY is set, otherwise alias + NLI
+  openai_model: gpt-4o-mini

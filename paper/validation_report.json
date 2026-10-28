@@ -1,0 +1,32 @@
+{
+  "unresolved_tokens": [
+    "RESFIG:cost",
+    "RESFIG:flip",
+    "RESTXT:ablation.combination",
+    "RESTXT:ablation.k",
+    "RESTXT:ablation.strict",
+    "RESTXT:abstract.results",
+    "RESTXT:conclusion.results",
+    "RESTXT:discussion.facts",
+    "RESTXT:intro.findings",
+    "RESTXT:results.datasets",
+    "RESTXT:results.rq1",
+    "RESTXT:results.rq2",
+    "RESTXT:results.rq3",
+    "RESTXT:results.rq4",
+    "RESTXT:results.split",
+    "RESTXT:setup.backend",
+    "RESTXT:setup.judge"
+  ],
+  "todo_marks": 146,
+  "page_limit": 10,
+  "pages": 6,
+  "within_page_limit": true,
+  "type3_fonts": [],
+  "undefined_citations": [],
+  "undefined_references": [],
+  "overfull_boxes": 0,
+  "ready_to_submit": false,
+  "source_summary": null,
+  "source_mode": null
+}
